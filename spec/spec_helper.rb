@@ -8,7 +8,7 @@ require 'venue'
 
 RSpec.configure do |config|
   config.after(:each) do
-    Band.all().each() do |band|
+    Band.all().each do |band|
       band.destroy()
     end
     Venue.all().each do |venue|
