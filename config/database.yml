@@ -1,0 +1,7 @@
+development:
+  adapter: postgresql
+  database: tours_development
+
+test:
+  adapter: postgresql
+  database: tours_test
