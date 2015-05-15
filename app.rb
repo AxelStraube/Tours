@@ -75,3 +75,10 @@ post('/bands/:id') do
   @venues = (Venue.all).-(@band.venues)
   erb(:band)
 end
+
+delete('/bands/:id') do
+  @band = Band.find(params.fetch("id").to_i())
+  @band.delete
+  @bands = Band.all
+  erb(:bands)
+end

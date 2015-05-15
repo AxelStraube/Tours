@@ -1,5 +1,10 @@
 <h1><%= @band.name %></h1>
 
+<form action="/bands/<%= @band.id %>" method="post">
+  <input name="_method" type="hidden" value="delete">
+  <button type="submit">Delete Band</button>
+</form>
+
 <h3><%= @band.name %> has played at the following venues in the past:</h3>
 <% if @band.venues.any? %>
 <% @band.venues.each do |venue| %>
@@ -20,5 +25,5 @@
     <input type="checkbox" name="venue_id[]" value="<%= venue.id() %>"><%= venue.name %>
   </div>
   <% end %>
-  <button type="submit">Add Band</button>
+  <button type="submit">Add Venue</button>
 </form>
