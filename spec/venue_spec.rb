@@ -13,8 +13,8 @@ describe(Venue) do
     expect(venue.save()).to(eq(false))
   end
 
-  it("converts the name before save to have the first letter be uppercase no matter how entered") do
-    venue = Venue.create({:name => "slims"})
-    expect(venue.name()).to(eq("Slims"))
+  it("converts the name before save to have the first letter of each word be uppercase no matter how entered") do
+    venue = Venue.create({:name => "bottom of the hill"})
+    expect(venue.name()).to(eq("Bottom Of The Hill"))
   end
 end
