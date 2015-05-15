@@ -3,7 +3,13 @@
     <h4><i>Click on a venue name to see more information</i></h4>
     <% @venues.each do |venue| %>
       <ul>
-        <li><a href="/venues/<%= venue.id() %>"><%= venue.name() %></a></li>
+        <li>
+          <a href="/venues/<%= venue.id() %>"><%= venue.name() %></a>
+          <form action="/venues/<%= venue.id() %>" method="post">
+            <input name="_method" type="hidden" value="delete">
+            <button type="submit">Delete Venue</button>
+          </form>
+        </li>
       </ul>
     <% end %>
   <% else %>
