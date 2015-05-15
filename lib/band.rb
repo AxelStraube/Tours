@@ -1,11 +1,11 @@
 class Band < ActiveRecord::Base
   has_and_belongs_to_many :venues
   validates(:name, :presence => true)
-  before_save(:upcase_first_letter_name)
+  before_save(:capitalize_name)
 
 private
 
-  define_method(:upcase_first_letter_name) do
-    self.name=(name().capitalize())
+  define_method(:capitalize_name) do
+    self.name=(name().split.map(&:capitalize).join(' '))
   end
 end
