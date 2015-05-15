@@ -7,4 +7,9 @@ describe(Venue) do
     venue.bands.push(band)
     expect(venue.bands()).to(eq([band]))
   end
+
+  it("validates the presence of name") do
+    venue = Venue.new({:name => ""})
+    expect(venue.save()).to(eq(false))
+  end
 end
