@@ -1,0 +1,8 @@
+<h1><%= @band.name %></h1>
+
+<form action="/bands/<%= @band.id %>" method="post">
+  <input name="_method" type="hidden" value="patch">
+  <input placeholder="Enter New Band Name" id="new_name" name="new_name" type="text">
+
+  <button type="submit">Change Name</button>
+</form>

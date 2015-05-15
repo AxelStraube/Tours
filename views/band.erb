@@ -1,5 +1,9 @@
 <h1><%= @band.name %></h1>
 
+<form action="/bands/<%= @band.id %>/edit">
+  <button type="submit">Edit Band Name</button>
+</form>
+
 <form action="/bands/<%= @band.id %>" method="post">
   <input name="_method" type="hidden" value="delete">
   <button type="submit">Delete Band</button>

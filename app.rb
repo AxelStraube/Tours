@@ -82,3 +82,16 @@ delete('/bands/:id') do
   @bands = Band.all
   erb(:bands)
 end
+
+get('/bands/:id/edit') do
+  @band = Band.find(params.fetch("id").to_i())
+  erb(:band_edit)
+end
+
+patch('/bands/:id') do
+  @band = Band.find(params.fetch("id").to_i())
+  new_name = params.fetch("new_name")
+  @band.update({:name => new_name})
+  @venues = Venue.all
+  erb(:band)
+end
