@@ -26,7 +26,7 @@
 <form action="/bands/<%= @band.id %>" method="post">
   <% @venues.each do |venue| %>
   <div class="checkbox">
-    <input type="checkbox" name="venue_id[]" value="<%= venue.id() %>"><%= venue.name %>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="checkbox" name="venue_id[]" value="<%= venue.id() %>"><%= venue.name %>
   </div>
   <% end %>
   <button type="submit">Add Venue</button>
