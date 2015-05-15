@@ -58,3 +58,20 @@ post('/bands') do
   @bands = Band.all
   erb(:bands)
 end
+
+get('/bands/:id') do
+  @band = Band.find(params.fetch("id").to_i())
+  @venues = Venue.all
+  erb(:band)
+end
+
+post('/bands/:id') do
+  @band = Band.find(params.fetch("id").to_i())
+  venue_id = params.fetch("venue_id")
+  venue_id.each do |individual_id|
+    venue = Venue.find(individual_id)
+    @band.venues.push(venue)
+  end
+  @venues = (Venue.all).-(@band.venues)
+  erb(:band)
+end
