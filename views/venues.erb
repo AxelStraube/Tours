@@ -5,10 +5,6 @@
       <ul>
         <li>
           <a href="/venues/<%= venue.id() %>"><%= venue.name() %></a>
-          <form action="/venues/<%= venue.id() %>" method="post">
-            <input name="_method" type="hidden" value="delete">
-            <button type="submit">Delete Venue</button>
-          </form>
         </li>
       </ul>
     <% end %>

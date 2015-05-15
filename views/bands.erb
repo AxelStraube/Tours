@@ -1,6 +1,6 @@
 <h3>Current Bands:</h3>
   <% if @bands.any? %>
-    <h4><i>Click on a band name to see more information</i></h4>
+    <h4><i>Click on a band name to edit or delete the band in your database</i></h4>
     <% @bands.each do |band| %>
       <ul>
         <li><a href="/bands/<%= band.id() %>"><%= band.name() %></a></li>
